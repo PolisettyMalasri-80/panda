@@ -1,0 +1,22 @@
+document.addEvenListener("DOMcontentLoaded",function(){
+    var animalpicture=
+    document.getElementById('animalpicture');
+    var scoreDisplay=document.getElementById('score');
+    var timeDisplay=document.getElementById('time');
+    var end=document.getElementById('end');
+    var score=0;
+    var timeLeft=10;
+   animalpicture.addEventListener('click',function(){
+        score++;
+        scoreDisplay.textcontent='score:'+score;
+    });
+  var countdown=setInterval(function(){
+    timeleft--;
+    timeDisplay.textcontent=timeleft+'wacky seconds';
+    if(timeleft<=0){
+      clearInterval(countdown);
+      end.textcontent="Enough! I can't be beaten by you";
+      scoreDisplay.textcontent=score;
+    }
+   },1000);
+ });
